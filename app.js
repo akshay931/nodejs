@@ -8,20 +8,17 @@ const port = process.env.PORT || 8080;
 //-------------------------------------------------------------------------
 app.use(cors());
 // app.use('/',index);
-app.use(express.static('build'));
+app.use(express.static('out'));
 
 const io = require('socket.io')(server, {
   cors: {
-    origin: "akshay1.me",
+    origin: "http://localhost:3000",
     credentials: true
   }
 });
 
 io.on("connection", (socket) => {
-  
-    socket.on("update",(data)=>{console.log(data)});
-
-
+  console.log("user connected");
     socket.on("disconnect", () => {
       console.log("Client disconnected");
     });
