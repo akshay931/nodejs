@@ -1,4 +1,5 @@
 const express = require("express");
+const fetch = require('node-fetch');
 const http = require("http");
 var cors = require('cors');
 const index = require("./routes/index");
@@ -10,6 +11,9 @@ app.use(cors());
 // app.use('/',index);
 app.use(express.static('./out/'));
 
+
+
+  
 const io = require('socket.io')(server, {
   cors: {
     origin: "http://localhost:3000",
@@ -26,3 +30,4 @@ io.on("connection", (socket) => {
 
   
 server.listen(port, () => console.log(`Listening on port ${port}`));
+
