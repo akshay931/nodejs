@@ -16,7 +16,7 @@ app.use('/api/',(req,res)=>{
 // mongoClient.connect("mongodb://my-database:fs1NGabv1jJbPG5qI8NvWmJvZyRVehxNuQnBbwhxBvvbJg9kAYFZimnRzq7lD1aV1cBzzkrIGdBeWaUWRt7uNA==@my-database.mongo.cosmos.azure.com:10255/?ssl=true&appName=@my-database@", function (err, db) {
 //   db.close();
 // });
-// app.use(express.static('./out/'));
+app.use(express.static('./out/'));
 
 
 
