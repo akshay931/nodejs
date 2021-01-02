@@ -8,8 +8,15 @@ const server = http.createServer(app);
 const port = process.env.PORT || 8080;
 //-------------------------------------------------------------------------
 app.use(cors());
-// app.use('/',index);
-app.use(express.static('./out/'));
+
+app.use('/api/',(req,res)=>{
+  res.json({data:'this is from server'});
+});
+// var mongoClient = require("mongodb").MongoClient;
+// mongoClient.connect("mongodb://my-database:fs1NGabv1jJbPG5qI8NvWmJvZyRVehxNuQnBbwhxBvvbJg9kAYFZimnRzq7lD1aV1cBzzkrIGdBeWaUWRt7uNA==@my-database.mongo.cosmos.azure.com:10255/?ssl=true&appName=@my-database@", function (err, db) {
+//   db.close();
+// });
+// app.use(express.static('./out/'));
 
 
 
